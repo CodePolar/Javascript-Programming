@@ -181,3 +181,21 @@ let funModule = (function() {
     }
   }
 })();
+
+function pick(obj, arr) {
+  let data = {};
+  if(obj === null || obj === '') {
+    return data;
+  }
+  for(let property in obj) {
+    for(let elements of arr) {
+      if(property === elements) {
+        data[property] = obj[property];
+      }
+    }
+  }
+  return data;
+}
+
+pick({name: 'William', lastName: "Pernia", email: "perniaj54@gmail.com"}, ['name', 'email']);
+
